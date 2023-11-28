@@ -5,7 +5,9 @@ const url = "https://v2.jokeapi.dev/joke/Any?type=single";
 let getJoke = () => {
   fetch(url)
     .then((data) => data.json())
-    .then((item) => console.log(item));
+    .then((item) => (jokeContainer.innerHTML = item.joke));
 };
 
-getJoke();
+btn.addEventListener("click", () => {
+  getJoke();
+});
